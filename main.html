@@ -4,8 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <!-- daisyui link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- fortawesome link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
-  <body>
+  <body class="bg-base-300 h-screen">
+    <nav class="bg-white flex justify-between items-center px-10 py-4">
+      <div class="flex items-center space-x-2">
+        <img class="max-w-[40px]" src="./assets/github-logo.png" alt="" />
+        <p class="text-2xl font-bold">GitHub Issues Tracker</p>
+      </div>
+
+      <div class="space-x-2 flex items-center">
+        <input
+          class="border-slate-400 rounded-md border p-2"
+          type="text"
+          placeholder="Search Issues ..."
+        />
+        <button class="btn btn-primary">Primary</button>
+      </div>
+    </nav>
+
+    <section class="bg-white w-10/12 mx-auto mt-10 p-5 rounded-md">
+      <button class="btn btn-soft btn-primary px-11">All</button>
+      <button class="btn btn-soft btn-primary px-9">Open</button>
+      <button class="btn btn-soft btn-primary px-9">Closed</button>
+    </section>
+
+    <section
+      class="bg-white w-10/12 mx-auto mt-10 p-5 rounded-md flex justify-between"
+    >
+      <div class="flex items-center space-x-2">
+        <div>
+          <img src="./assets/Aperture.png" alt="" />
+        </div>
+        <div>
+          <p class="text-xl font-bold">50 issues</p>
+          <p>Track and manage your project issues</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-2">
+          <div><img src="./assets/green-dot.png" alt="" /></div>
+          <div>Open</div>
+        </div>
+        <div class="flex items-center space-x-2">
+          <div><img src="./assets/purple-dot.png" alt="" /></div>
+          <div>closed</div>
+        </div>
+      </div>
+    </section>
+
     <script src="main.js"></script>
   </body>
 </html>

@@ -1,3 +1,3 @@
-if (performance.getEntriesByType("navigation")[0].type === "reload") {
-  window.location.href = "index.html";
-}
+// if (performance.getEntriesByType("navigation")[0].type === "reload") {
+//   window.location.href = "index.html";
+// }

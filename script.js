@@ -8,7 +8,3 @@ function logIn() {
     alert("wrong credentials");
   }
 }
-
-if (performance.getEntriesByType("navigation")[0].type === "reload") {
-  window.location.href = "index.html";
-}
