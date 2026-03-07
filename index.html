@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- daisyui link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="geist">
+    <section class="flex justify-center items-center h-screen">
+      <fieldset
+        class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
+      >
+        <div class="flex flex-col justify-center items-center pb-4">
+          <img class="pb-6" src="./assets/github-logo.png" alt="" />
+          <p class="text-2xl font-bold">GitHub Issues Tracker</p>
+          <p class="text-xs opacity-60">Sign in to manage your issues</p>
+        </div>
+
+        <label class="label">Email</label>
+        <input type="email" class="input" id="email" placeholder="Email" />
+        <p class="text-blue-600 pb-1">Default: admin</p>
+
+        <label class="label">Password</label>
+        <input
+          type="password"
+          class="input"
+          id="password"
+          placeholder="Password"
+        />
+        <p class="text-blue-600 pb-1">Default: admin123</p>
+
+        <button onclick="logIn()" class="btn btn-primary mt-4">Login</button>
+        <div class="flex flex-col justify-center items-center pt-4">
+          <p class="pb-4">Or</p>
+
+          <p class="pb-4">Demo Credentials:</p>
+
+          <div class="flex flex-col justify-center items-center">
+            <p><span class="font-bold">Username:</span> admin</p>
+            <p><span class="font-bold">Password:</span> admin123</p>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
