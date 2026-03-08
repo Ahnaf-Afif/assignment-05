@@ -33,8 +33,10 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="bg-base-300 h-screen">
-    <nav class="bg-white flex justify-between items-center px-10 py-4">
+  <body class="bg-base-300">
+    <nav
+      class="bg-white flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between items-center px-10 py-4"
+    >
       <div class="flex items-center space-x-2">
         <img class="max-w-[40px]" src="./assets/github-logo.png" alt="" />
         <p class="text-2xl font-bold">GitHub Issues Tracker</p>
@@ -53,7 +55,9 @@
       </div>
     </nav>
 
-    <section class="bg-white w-10/12 mx-auto mt-10 p-5 rounded-md">
+    <section
+      class="bg-white w-10/12 mx-auto mt-10 p-5 rounded-md flex flex-col md:flex-row gap-4"
+    >
       <button onclick="loadProblems()" class="btn btn-soft btn-primary px-11">
         All
       </button>
@@ -72,7 +76,7 @@
     </section>
 
     <section
-      class="bg-white w-10/12 mx-auto mt-10 p-5 rounded-md flex justify-between"
+      class="bg-white w-10/12 mx-auto mt-10 p-5 rounded-md flex flex-col md:flex-row space-y-8 md:space-y-0 justify-between"
     >
       <div class="flex items-center space-x-2">
         <div>
@@ -99,89 +103,6 @@
       id="problems-box"
       class="bg-white w-10/12 mx-auto mt-10 p-5 rounded-md grid grid-cols-1 md:grid-cols-3 gap-5"
     ></section>
-
-    <!-- <section>
-      
-
-      <dialog id="issue_modal" class="modal">
-        <div class="modal-box max-w-4xl p-10 bg-white rounded-2xl">
-          <div class="mb-5">
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-3">
-              Fix broken image uploads
-            </h2>
-            <div class="flex items-center text-sm text-gray-600 gap-2">
-              <span
-                class="badge badge-success text-white font-semibold py-3 px-4"
-                >Opened</span
-              >
-              <span class="text-gray-400">•</span>
-              <span>Opened by Fahim Ahmed</span>
-              <span class="text-gray-400">•</span>
-              <span>22/02/2026</span>
-            </div>
-          </div>
-
-          <div class="flex gap-2 mb-8">
-            <div
-              class="flex items-center gap-1.5 bg-red-50 text-red-600 px-3 py-1 rounded-full border border-red-100 text-xs font-semibold"
-            >
-              <i class="fa-solid fa-bug text-sm"></i>
-              <span>BUG</span>
-            </div>
-            <div
-              class="flex items-center gap-1.5 bg-amber-50 text-amber-600 px-3 py-1 rounded-full border border-amber-100 text-xs font-semibold"
-            >
-              <img
-                class="w-3.5 h-3.5"
-                src="./assets/Aperture.png"
-                alt="aperture"
-              />
-              <span>HELP WANTED</span>
-            </div>
-          </div>
-
-          <p class="text-gray-600 text-lg leading-relaxed mb-10">
-            The navigation menu doesn't collapse properly on mobile devices.
-            Need to fix the responsive behavior.
-          </p>
-
-          <div
-            class="bg-gray-50 border border-gray-100 rounded-xl p-8 flex justify-between items-start mb-8"
-          >
-            <div>
-              <span class="text-gray-500 font-medium text-lg block mb-1.5"
-                >Assignee:</span
-              >
-              <span class="text-gray-900 font-bold text-xl">Fahim Ahmed</span>
-            </div>
-            <div>
-              <span class="text-gray-500 font-medium text-lg block mb-1.5"
-                >Priority:</span
-              >
-              <span
-                class="bg-red-500 text-white font-extrabold px-5 py-1 rounded-full text-xs uppercase tracking-wider"
-              >
-                HIGH
-              </span>
-            </div>
-          </div>
-
-          <div class="modal-action">
-            <form method="dialog">
-              <button
-                class="btn bg-indigo-600 hover:bg-indigo-700 text-white border-none px-8 rounded-xl"
-              >
-                Close
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <form method="dialog" class="modal-backdrop">
-          <button>close</button>
-        </form>
-      </dialog>
-    </section> -->
 
     <script src="main.js"></script>
   </body>

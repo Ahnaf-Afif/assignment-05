@@ -1,7 +1,3 @@
-// if (performance.getEntriesByType("navigation")[0].type === "reload") {
-//   window.location.href = "index.html";
-// }
-
 const loadProblems = () => {
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     .then((res) => res.json())
