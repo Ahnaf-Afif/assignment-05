@@ -1,7 +1,22 @@
-const loadProblems = () => {
+const removeActive = () => {
+  const Btns = document.querySelectorAll(".select-btn");
+  for (let btn of Btns) {
+    btn.classList.remove("active");
+  }
+};
+
+const addActive = (id) => {
+  const btn = document.getElementById(id);
+  btn.classList.add("active");
+};
+
+const loadProblems = (id) => {
+  removeActive();
+
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     .then((res) => res.json())
     .then((data) => displayAllProblems(data.data));
+  addActive(id);
 };
 
 const displayAllProblems = (data) => {
@@ -77,10 +92,13 @@ const displayAllProblems = (data) => {
   count();
 };
 
-const loadOpenProblems = () => {
+const loadOpenProblems = (id) => {
+  removeActive();
+
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     .then((res) => res.json())
     .then((data) => displayOpenProblems(data.data));
+  addActive(id);
 };
 
 const displayOpenProblems = (data) => {
@@ -157,9 +175,13 @@ const displayOpenProblems = (data) => {
 };
 
 const loadClosedProblems = () => {
+  removeActive();
+
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     .then((res) => res.json())
     .then((data) => displayClosedProblems(data.data));
+
+  addActive(id);
 };
 
 const displayClosedProblems = (data) => {
@@ -331,7 +353,9 @@ const count = () => {
   document.getElementById("issueCount").innerText = `${count} Issues`;
 };
 
-const loadSearchProblems = () => {
+const loadSearchProblems = (id) => {
+  removeActive();
+
   const searchField = document.getElementById("search-issue");
   const searchText = searchField.value;
   fetch(
@@ -339,6 +363,7 @@ const loadSearchProblems = () => {
   )
     .then((res) => res.json())
     .then((data) => searchIssue(data.data));
+  addActive(id);
 };
 
 const searchIssue = (data) => {

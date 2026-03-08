@@ -33,7 +33,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="bg-base-300">
+  <body class="bg-base-300 geist">
     <nav
       class="bg-white flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between items-center px-10 py-4"
     >
@@ -49,7 +49,11 @@
           type="text"
           placeholder="Search Issues ..."
         />
-        <button onclick="loadSearchProblems()" class="btn btn-primary">
+        <button
+          id="search-btn"
+          onclick="loadSearchProblems('search-btn')"
+          class="btn btn-soft btn-primary select-btn"
+        >
           Search
         </button>
       </div>
@@ -58,18 +62,24 @@
     <section
       class="bg-white w-10/12 mx-auto mt-10 p-5 rounded-md flex flex-col md:flex-row gap-4"
     >
-      <button onclick="loadProblems()" class="btn btn-soft btn-primary px-11">
+      <button
+        id="all-btn"
+        onclick="loadProblems('all-btn')"
+        class="btn btn-soft btn-primary px-11 select-btn"
+      >
         All
       </button>
       <button
-        onclick="loadOpenProblems()"
-        class="btn btn-soft btn-primary px-9"
+        id="open-btn"
+        onclick="loadOpenProblems('open-btn')"
+        class="btn btn-soft btn-primary px-9 select-btn"
       >
         Open
       </button>
       <button
-        onclick="loadClosedProblems()"
-        class="btn btn-soft btn-primary px-9"
+        id="closed-btn"
+        onclick="loadClosedProblems('closed-btn')"
+        class="btn btn-soft btn-primary px-9 select-btn"
       >
         Closed
       </button>
