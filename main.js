@@ -64,8 +64,8 @@ const displayAllProblems = (data) => {
                                             <span class="text-sm">${problem.labels
                                               .map(
                                                 (label) => `
-                                                        <span class="badge badge-info badge-outline text-xs font-bold">
-                                                            ${label}
+                                                        <span class="badge ${label === "bug" ? "badge-error" : label === "help wanted" ? "badge-warning" : label === "good first issue" ? "badge-info" : label === "documentation" ? "badge-primary" : "badge-accent"} badge-outline text-xs font-bold">
+                                                          ${label === "bug" ? '<i class="fa-solid fa-bug"></i>' : label === "help wanted" ? '<i class="fa-brands fa-hire-a-helper"></i>' : label === "good first issue" ? '<i class="fa-solid fa-signal"></i>' : label === "documentation" ? '<i class="fa-solid fa-book"></i>' : '<i class="fa-solid fa-circle"></i>'}   ${label}
                                                         </span>
                                                     `,
                                               )
@@ -145,8 +145,8 @@ const displayOpenProblems = (data) => {
                                             <span class="text-sm">${problem.labels
                                               .map(
                                                 (label) => `
-                                                        <span class="badge badge-info badge-outline text-xs font-bold">
-                                                            ${label}
+                                                        <span class="badge ${label === "bug" ? "badge-error" : label === "help wanted" ? "badge-warning" : label === "good first issue" ? "badge-info" : label === "documentation" ? "badge-primary" : "badge-accent"} badge-outline text-xs font-bold">
+                                                          ${label === "bug" ? '<i class="fa-solid fa-bug"></i>' : label === "help wanted" ? '<i class="fa-brands fa-hire-a-helper"></i>' : label === "good first issue" ? '<i class="fa-solid fa-signal"></i>' : label === "documentation" ? '<i class="fa-solid fa-book"></i>' : '<i class="fa-solid fa-circle"></i>'}   ${label}
                                                         </span>
                                                     `,
                                               )
@@ -229,8 +229,8 @@ const displayClosedProblems = (data) => {
                                             <span class="text-sm">${problem.labels
                                               .map(
                                                 (label) => `
-                                                        <span class="badge badge-info badge-outline text-xs font-bold">
-                                                            ${label}
+                                                        <span class="badge ${label === "bug" ? "badge-error" : label === "help wanted" ? "badge-warning" : label === "good first issue" ? "badge-info" : label === "documentation" ? "badge-primary" : "badge-accent"} badge-outline text-xs font-bold">
+                                                          ${label === "bug" ? '<i class="fa-solid fa-bug"></i>' : label === "help wanted" ? '<i class="fa-brands fa-hire-a-helper"></i>' : label === "good first issue" ? '<i class="fa-solid fa-signal"></i>' : label === "documentation" ? '<i class="fa-solid fa-book"></i>' : '<i class="fa-solid fa-circle"></i>'}   ${label}
                                                         </span>
                                                     `,
                                               )
@@ -293,8 +293,8 @@ const openModal = (problem) => {
                                             <span class="text-sm">${problem.labels
                                               .map(
                                                 (label) => `
-                                                        <span class="badge badge-info badge-outline text-xs font-bold">
-                                                            ${label}
+                                                        <span class="badge ${label === "bug" ? "badge-error" : label === "help wanted" ? "badge-warning" : label === "good first issue" ? "badge-info" : label === "documentation" ? "badge-primary" : "badge-accent"} badge-outline text-xs font-bold">
+                                                          ${label === "bug" ? '<i class="fa-solid fa-bug"></i>' : label === "help wanted" ? '<i class="fa-brands fa-hire-a-helper"></i>' : label === "good first issue" ? '<i class="fa-solid fa-signal"></i>' : label === "documentation" ? '<i class="fa-solid fa-book"></i>' : '<i class="fa-solid fa-circle"></i>'}   ${label}
                                                         </span>
                                                     `,
                                               )
@@ -351,6 +351,16 @@ const count = () => {
   const problemsBox = document.getElementById("problems-box");
   const count = problemsBox.children.length;
   document.getElementById("issueCount").innerText = `${count} Issues`;
+};
+
+const isEmpty = () => {
+  const problemsBox = document.getElementById("problems-box");
+  const count = problemsBox.children.length;
+  if (count === 0) {
+    const div = document.createElement("div");
+    div.innerHTML = "NOTHING IS IN HERE";
+    problemsBox.appendChild(div);
+  }
 };
 
 const loadSearchProblems = (id) => {
@@ -411,8 +421,8 @@ const searchIssue = (data) => {
                                             <span class="text-sm">${problem.labels
                                               .map(
                                                 (label) => `
-                                                        <span class="badge badge-info badge-outline text-xs font-bold">
-                                                            ${label}
+                                                        <span class="badge ${label === "bug" ? "badge-error" : label === "help wanted" ? "badge-warning" : label === "good first issue" ? "badge-info" : label === "documentation" ? "badge-primary" : "badge-accent"} badge-outline text-xs font-bold">
+                                                          ${label === "bug" ? '<i class="fa-solid fa-bug"></i>' : label === "help wanted" ? '<i class="fa-brands fa-hire-a-helper"></i>' : label === "good first issue" ? '<i class="fa-solid fa-signal"></i>' : label === "documentation" ? '<i class="fa-solid fa-book"></i>' : '<i class="fa-solid fa-circle"></i>'}   ${label}
                                                         </span>
                                                     `,
                                               )
@@ -437,6 +447,7 @@ const searchIssue = (data) => {
     problemsBox.appendChild(div);
   }
   count();
+  isEmpty();
 };
 
 loadProblems();
