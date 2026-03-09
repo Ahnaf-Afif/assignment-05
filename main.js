@@ -486,4 +486,4 @@ const searchIssue = (data) => {
   isEmpty();
 };
 
-loadProblems();
+loadProblems("all-btn");
