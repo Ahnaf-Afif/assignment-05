@@ -188,7 +188,7 @@ const displayOpenProblems = (data) => {
   count();
 };
 
-const loadClosedProblems = () => {
+const loadClosedProblems = (id) => {
   removeActive();
   const spinner = document.getElementById("loading-spinner");
   const problemsBox = document.getElementById("problems-box");
