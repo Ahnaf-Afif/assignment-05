@@ -381,6 +381,14 @@ const isEmpty = () => {
     const div = document.createElement("div");
     div.innerHTML = "NOTHING IS IN HERE";
     problemsBox.appendChild(div);
+    div.classList.add(
+      "flex",
+      "justify-center",
+      "items-center",
+      "text-4xl",
+      "font-bold",
+      "w-full",
+    );
   }
 };
 
