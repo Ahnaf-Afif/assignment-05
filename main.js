@@ -12,10 +12,17 @@ const addActive = (id) => {
 
 const loadProblems = (id) => {
   removeActive();
+  const spinner = document.getElementById("loading-spinner");
+  const problemsBox = document.getElementById("problems-box");
+  problemsBox.innerHTML = "";
+  spinner.classList.remove("hidden");
 
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     .then((res) => res.json())
-    .then((data) => displayAllProblems(data.data));
+    .then((data) => {
+      displayAllProblems(data.data);
+      spinner.classList.add("hidden");
+    });
   addActive(id);
 };
 
@@ -94,10 +101,17 @@ const displayAllProblems = (data) => {
 
 const loadOpenProblems = (id) => {
   removeActive();
+  const spinner = document.getElementById("loading-spinner");
+  const problemsBox = document.getElementById("problems-box");
+  problemsBox.innerHTML = "";
+  spinner.classList.remove("hidden");
 
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     .then((res) => res.json())
-    .then((data) => displayOpenProblems(data.data));
+    .then((data) => {
+      displayOpenProblems(data.data);
+      spinner.classList.add("hidden");
+    });
   addActive(id);
 };
 
@@ -176,10 +190,17 @@ const displayOpenProblems = (data) => {
 
 const loadClosedProblems = () => {
   removeActive();
+  const spinner = document.getElementById("loading-spinner");
+  const problemsBox = document.getElementById("problems-box");
+  problemsBox.innerHTML = "";
+  spinner.classList.remove("hidden");
 
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     .then((res) => res.json())
-    .then((data) => displayClosedProblems(data.data));
+    .then((data) => {
+      displayClosedProblems(data.data);
+      spinner.classList.add("hidden");
+    });
 
   addActive(id);
 };
@@ -365,6 +386,10 @@ const isEmpty = () => {
 
 const loadSearchProblems = (id) => {
   removeActive();
+  const spinner = document.getElementById("loading-spinner");
+  const problemsBox = document.getElementById("problems-box");
+  problemsBox.innerHTML = "";
+  spinner.classList.remove("hidden");
 
   const searchField = document.getElementById("search-issue");
   const searchText = searchField.value;
@@ -372,7 +397,10 @@ const loadSearchProblems = (id) => {
     `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`,
   )
     .then((res) => res.json())
-    .then((data) => searchIssue(data.data));
+    .then((data) => {
+      searchIssue(data.data);
+      spinner.classList.add("hidden");
+    });
   addActive(id);
 };
 
